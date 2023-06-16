@@ -1,0 +1,60 @@
+{
+  "files.exclude": {
+    // ".husky": true,
+    // "node_modules": true,
+    // "dist": true,
+    // "bin": true
+  },
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "jest.autoRun": "off",
+  "jest.enableSnapshotUpdateMessages": false,
+  "jest.enableSnapshotPreviews": false,
+  "jest.enableCodeLens": false,
+  "cSpell.words": [
+    "afms",
+    "bips",
+    "cabm",
+    "Casl",
+    "Caspio",
+    "cpt",
+    "Cqrs",
+    "factrak",
+    "fein",
+    "Fisco",
+    "Fundings",
+    "lkup",
+    "maximo",
+    "Mgmt",
+    "naics",
+    "nestjs",
+    "nextval",
+    "Pscs",
+    "reimbursables",
+    "tpas",
+    "upsert",
+    "xfer",
+    "Zipcode"
+  ],
+  "cSpell.enableFiletypes": ["*"],
+  "cSpell.maxNumberOfProblems": 100000,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
