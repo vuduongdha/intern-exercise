@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+ id String @id @default(uuid()) @db.Uuid
+ firstName String? @map("first_name") @db.VarChar(50)
+ lastName String? @map("last_name") @db.VarChar(50)
+ dateOfBirth DateTime? @map("date_of_birth") @db.Date
+ email String @unique 
+ phoneNumber String? @map("phone_number") @db.Char(10)
+ isEmailVerified Boolean? @map("is_email_verified") @db.Boolean
+ gender Gender 
+ status Status @default(INACTIVE)
+ roles UsersOnRoles[]
+ @@map("user")
+
+}
+
+enum Gender{
+  MALE 
+  FEMALE
+  TBD
+}
+enum Status{
+  ACTIVE
+  INACTIVE
+}
+
+model Role {
+  id String @id @default(uuid()) @db.Uuid
+  name String @unique
+  users UsersOnRoles[]
+  @@map("role")
+}
+model UsersOnRoles{
+  user      User     @relation(fields: [userId], references: [id])
+  userId     String @map("user_id") @db.Uuid // relation scalar field (used in the `@relation` attribute above)
+  role  Role @relation(fields: [roleId], references: [id])
+  roleId String @map("role_id") @db.Uuid // relation scalar field (used in the `@relation` attribute above)
+ 
+
+  @@id([userId, roleId])
+  @@map("users_roles")
+}
