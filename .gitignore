@@ -2,8 +2,6 @@
 /dist
 /node_modules
 
-id_rsa
-
 # Logs
 logs
 *.log
@@ -35,15 +33,3 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-# env
-.env
-
-# local libs
-src/libs
-
-# test coverage
-.coverage
-
-# test reports
-/reports
